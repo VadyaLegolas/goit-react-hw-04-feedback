@@ -4,6 +4,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
       {options.map(label => {
+        const labelFirstLetterUpperCase = label.charAt(0).toUpperCase() + label.slice(1)
         return (
           <Button
             key={label}
@@ -11,7 +12,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
               onLeaveFeedback(label);
             }}
           >
-            {label.charAt(0).toUpperCase() + label.slice(1)}
+            {labelFirstLetterUpperCase}
           </Button>
         );
       })}
