@@ -16,15 +16,13 @@ export const App = () => {
   const incrementFeedback = option => {
     switch (option) {
       case 'good':
-        setGood(prevState => prevState + 1);
-        break;
+        return setGood(prevState => prevState + 1);
       case 'neutral':
-        setNeutral(prevState => prevState + 1);
-        break;
+        return setNeutral(prevState => prevState + 1);
       case 'bad':
-        setBad(prevState => prevState + 1);
-        break;
-        default: return
+        return setBad(prevState => prevState + 1);
+      default:
+        throw new Error('Unknown option');
     }
   };
 
